@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import { Link, Route, Routes,} from 'react-router-dom';
 import './App.css';
+import Iphone from './Components/Iphone';
+import Samsung from './Components/Samsung';
+import Nokia from './Components/Nokia';
+import Motorola from './Motorola';
+import Xiaomi from './Components/Xiaomi';
+import Poco from './Components/Poco';
+import IphonsInformation from './Components/IphonsInformation';
 
-function App() {
+function App() { 
+  
   return (
+    <>
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Link to="iphone">Iphone</Link>
+      <Link to="samsung">Samsung</Link>
+      <Link to="nokia">Nokia</Link>
+      <Link to="motorola">Motorola</Link>
+      <Link to="xiaomi">Xiaomi</Link>
+      <Link to="poco">Poco</Link>               
     </div>
+    <Routes>
+
+      <Route path='iphone' element = {<Iphone/>}>
+        <Route path=":param" element = {<IphonsInformation/>}/>
+      </Route>
+
+      <Route path='samsung' element = {<Samsung/>}/>
+      <Route path='nokia' element = {<Nokia/>}/>
+      <Route path='motorola' element = {<Motorola/>}/>
+      <Route path='xiaomi' element = {<Xiaomi/>}/>
+      <Route path='poco' element = {<Poco/>}/>
+    </Routes>
+    <IphonsInformation/>
+       
+    </>
   );
 }
 
