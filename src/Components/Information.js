@@ -5,12 +5,12 @@ import { useParams } from "react-router-dom"
 
 
 
-const IphonsInformation = () => {
-
+const Information = () => {
+  
     const param = useParams()
     console.log(param);
 
-    const findPhone = Phons.find((el)=> el.id === "1s")
+    const findPhone = Phons.find((el)=> el.id === param.param)
 
   return (
     <div className='info'>
@@ -22,4 +22,4 @@ const IphonsInformation = () => {
   )
 }
 
-export default IphonsInformation
+export default Information

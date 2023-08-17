@@ -6,7 +6,7 @@ import Nokia from './Components/Nokia';
 import Motorola from './Motorola';
 import Xiaomi from './Components/Xiaomi';
 import Poco from './Components/Poco';
-import IphonsInformation from './Components/IphonsInformation';
+import Information from './Components/Information';
 
 function App() { 
   
@@ -22,18 +22,15 @@ function App() {
       <Link to="poco">Poco</Link>               
     </div>
     <Routes>
-
       <Route path='iphone' element = {<Iphone/>}>
-        <Route path=":param" element = {<IphonsInformation/>}/>
+        <Route path=":param" element = {<Information/>}/>
       </Route>
-
       <Route path='samsung' element = {<Samsung/>}/>
       <Route path='nokia' element = {<Nokia/>}/>
       <Route path='motorola' element = {<Motorola/>}/>
       <Route path='xiaomi' element = {<Xiaomi/>}/>
       <Route path='poco' element = {<Poco/>}/>
     </Routes>
-    <IphonsInformation/>
        
     </>
   );

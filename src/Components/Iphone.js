@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 
 export const Phons = [
   {
@@ -24,6 +24,9 @@ export const Phons = [
 
 const Iphone = () => {
 
+  const param = useParams()
+  console.log(param);
+
  
 
   return (
@@ -37,6 +40,8 @@ const Iphone = () => {
           )
         })
       }
+
+      <Outlet/>
     </div>
   )
 }
